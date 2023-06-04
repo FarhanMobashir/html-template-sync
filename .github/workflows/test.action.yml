@@ -15,8 +15,8 @@ jobs:
 
       - name: Create mock S3 directory
         run: |
-          mkdir mock-s3
-          find . -path './mock-s3' -prune -o -type f -exec cp {} mock-s3/{} \;
+          echo "Install the AWS CLI..."
+          echo "Adding all the credentials..."
 
       - name: Sync files to mock S3
         run: |
