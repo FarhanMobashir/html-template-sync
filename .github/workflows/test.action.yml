@@ -16,7 +16,7 @@ jobs:
       - name: Create mock S3 directory
         run: |
           mkdir mock-s3
-          cp -R . mock-s3/
+          find . -path './mock-s3' -prune -o -type f -exec cp {} mock-s3/{} \;
 
       - name: Sync files to mock S3
         run: |
