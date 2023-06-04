@@ -1,0 +1,24 @@
+name: Update S3 (Mock)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create mock S3 directory
+        run: |
+          mkdir mock-s3
+          cp -R . mock-s3/
+
+      - name: Sync files to mock S3
+        run: |
+          echo "Syncing files to mock S3..."
+          ls mock-s3/
