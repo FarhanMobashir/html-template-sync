@@ -21,4 +21,4 @@ jobs:
       - name: Sync files to mock S3
         run: |
           echo "Syncing files to mock S3..."
-          ls mock-s3/
+          echo "Done!"
